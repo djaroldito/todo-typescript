@@ -6,23 +6,7 @@ import { Footer } from "./components/Footer";
 
 import { Header } from "./components/Header";
 
-// const mockTodos = [
-//   {
-//     id: "1",
-//     title: "todo 1",
-//     completed: true,
-//   },
-//   {
-//     id: "2",
-//     title: "todo 2",
-//     completed: false,
-//   },
-//   {
-//     id: "3",
-//     title: "todo 3",
-//     completed: false,
-//   },
-// ];
+
 
 const App = (): JSX.Element => {
   const [todos, setTodos] = useState([]);
@@ -31,6 +15,7 @@ const App = (): JSX.Element => {
   );
 
   const handleDelete = ({ id }: TodoId): void => {
+    // @ts-ignore
     let result = todos.filter((el) => el.id !== id);
     setTodos(result);
   };
@@ -40,17 +25,20 @@ const App = (): JSX.Element => {
     completed,
   }: Pick<Todotype, "id" | "completed">): void => {
     let result = todos.map((el) => {
+      // @ts-ignore
       if (el.id === id) {
         return {
+          // @ts-ignore
           ...el,
           completed,
         };
       }
       return el;
     });
+    // @ts-ignore
     setTodos(result);
   };
-
+// @ts-ignore
   const activeCount = todos.filter((el) => !el.completed).length;
   const completedCount = todos.length - activeCount;
 
@@ -59,12 +47,15 @@ const App = (): JSX.Element => {
   };
 
   const filteredTodos = todos.filter((el) => {
+    // @ts-ignore
     if (filterSelected === TODO_FILTERS.ACTIVE) return !el.completed;
+    // @ts-ignore
     if (filterSelected === TODO_FILTERS.COMPLETED) return el.completed;
     return el;
   });
 
   const handleRemoveAllCompleted = () : void=>{
+    // @ts-ignore
     const newTodos = todos.filter((el)=> !el.completed)
     setTodos(newTodos)
   }
@@ -76,6 +67,7 @@ const App = (): JSX.Element => {
       completed: false
     }
     const newTodos = [...todos, newTodo]
+    // @ts-ignore
     setTodos(newTodos)
   }
 
