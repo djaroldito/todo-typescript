@@ -6,26 +6,26 @@ import { Footer } from "./components/Footer";
 
 import { Header } from "./components/Header";
 
-const mockTodos = [
-  {
-    id: "1",
-    title: "todo 1",
-    completed: true,
-  },
-  {
-    id: "2",
-    title: "todo 2",
-    completed: false,
-  },
-  {
-    id: "3",
-    title: "todo 3",
-    completed: false,
-  },
-];
+// const mockTodos = [
+//   {
+//     id: "1",
+//     title: "todo 1",
+//     completed: true,
+//   },
+//   {
+//     id: "2",
+//     title: "todo 2",
+//     completed: false,
+//   },
+//   {
+//     id: "3",
+//     title: "todo 3",
+//     completed: false,
+//   },
+// ];
 
 const App = (): JSX.Element => {
-  const [todos, setTodos] = useState(mockTodos);
+  const [todos, setTodos] = useState([]);
   const [filterSelected, setFilterSelected] = useState<FilterValue>(
     TODO_FILTERS.ALL
   );
