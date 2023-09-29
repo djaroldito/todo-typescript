@@ -6,7 +6,7 @@ interface Props extends TodoType {
 }
 
 
-export const Todo :React.FC<Props> = ({ id, title, completed, handleDelete, handleCompleted }) => {
+export const Todo :React.FC<Props> = ({ id, title,  handleDelete, handleCompleted }) => {
   return (
     <div className='view'>
         <input  onChange={(e)=>{

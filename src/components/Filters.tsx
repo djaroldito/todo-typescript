@@ -1,4 +1,4 @@
-import { TODO_FILTERS, FILTERS_BUTTONS } from "../consts";
+import { FILTERS_BUTTONS } from "../consts";
 import { type FilterValue } from "../types";
 
 interface Props {
