@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+    .todoapp h1 {
+        font-size: 36px; /* Tamaño de fuente más pequeño */
+        top: -70px; /* Nueva posición */
+    }
+}
